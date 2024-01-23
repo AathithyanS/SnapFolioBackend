@@ -12,9 +12,11 @@ app.use(bodyParser.json())
 app.use('/api/user',userRouter )
 app.use(errorHandler)
 
+const port = process.env.PORT || 3000
+
 connectDb()
     .then(()=> {
         console.log('db connection succeeded')
-        app.listen(3000,() => console.log('server started at 3000')) 
+        app.listen(port,() => console.log('server started at 3000')) 
     })
     .catch(err => console.log(err))
