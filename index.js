@@ -14,7 +14,7 @@ app.use(bodyParser.json())
 app.use('/api/user',userRouter )
 app.use(errorHandler)
 
-const port = process.env.PORT || 4000
+const port = process.env.PORT || 3000
 
 connectDb()
     .then(()=> {

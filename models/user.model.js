@@ -6,11 +6,13 @@ module.exports = mongoose.model("Users", {
         titleName: {type: String},
         Description: {type: String},
         Profile: {type: String},
+        cv: {type: String},
     },
     eduSkills: {
         Education: [
             {
                 title: { type: String },
+                place: { type: String },
                 description: { type: String },
             }
         ],
@@ -19,11 +21,20 @@ module.exports = mongoose.model("Users", {
                 title: { type: String },
                 description: { type: String },
             }
+        ],
+        Projects: [
+            {
+                title: { type: String },
+                description: { type: String },
+                projectLink: { type: String },
+                
+            }
         ]
     },
     experience: [
         {
             title: { type: String },
+            year: { type: String },
             description: { type: String },
         }
     ],
