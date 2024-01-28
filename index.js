@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const bodyParser = require('body-parser')
 
 //local imports
@@ -8,11 +9,12 @@ const {errorHandler} = require('./middlewares')
 
 const app = express()
 
+app.use(cors())
 app.use(bodyParser.json())
 app.use('/api/user',userRouter )
 app.use(errorHandler)
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 4000
 
 connectDb()
     .then(()=> {
